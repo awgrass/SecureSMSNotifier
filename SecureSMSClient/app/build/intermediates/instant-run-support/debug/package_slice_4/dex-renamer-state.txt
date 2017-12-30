@@ -1,4 +1,0 @@
-#Sat Dec 30 17:15:47 CET 2017
-base.0=/Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/securesmsnotifier/SecureSMSClient/app/build/intermediates/transforms/dexMerger/debug/4
-path.0=classes.dex
-renamed.0=classes.dex

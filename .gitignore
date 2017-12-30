@@ -2,3 +2,7 @@
 */*/.idea
 */.idea
 .idea
+*/*/*/android-profile/*
+*/*/android-profile/*
+*/android-profile/*
+android-profile/*
