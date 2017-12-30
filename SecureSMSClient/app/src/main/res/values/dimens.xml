@@ -2,7 +2,7 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="text_padding">32dp</dimen>
     <dimen name="text_margin">16dp</dimen>
-    <dimen name="rename_padding">16dp</dimen>
+    <dimen name="alert_padding">16dp</dimen>
     <dimen name="list_item_padding">10dp</dimen>
     <dimen name="list_enable_padding">7dp</dimen>
     <dimen name="list_empty_icon">36dp</dimen>

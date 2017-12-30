@@ -6,13 +6,11 @@ import android.graphics.PorterDuff;
 import android.graphics.Typeface;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.HashMap;
@@ -35,64 +33,62 @@ class ListViewAdapter extends ArrayAdapter<Server> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View rowView = inflater.inflate(R.layout.list_item, parent, false);
+        if(inflater == null)
+            return new View(getContext());
+        View rowView;
+        if(convertView != null)
+            rowView = convertView;
+        else
+            rowView = inflater.inflate(R.layout.list_item, parent, false);
         final Server server = getItem(position);
-        if (server == null)
+        if(server == null)
             return rowView;
-        final TextView title = rowView.findViewById(R.id.listViewItemFirstLine);
-        final TextView description = rowView.findViewById(R.id.listViewItemSecondLine);
-        final ImageView imageViewNotebook = rowView.findViewById(R.id.listViewItemIconNotebook);
-        final ImageView imageViewPc = rowView.findViewById(R.id.listViewItemIconPc);
-        final ImageView imageViewEnable = rowView.findViewById(R.id.listViewItemIconEnable);
-        final ImageView imageViewDisable = rowView.findViewById(R.id.listViewItemIconDisable);
-        ImageView imageViewEdit = rowView.findViewById(R.id.listViewItemIconEdit);
-        ImageView imageViewDelete = rowView.findViewById(R.id.listViewItemIconDelete);
-        imageViewDelete.getDrawable().setColorFilter(
+        final ItemHolder holder = ItemHolder.byView(rowView);
+        holder.imageViewDelete.getDrawable().setColorFilter(
                 activity.getResources().getColor(R.color.colorAccent), PorterDuff.Mode.MULTIPLY);
-        title.setText(server.getName());
-        description.setText(server.getIp());
+        holder.title.setText(server.getName());
+        holder.description.setText(server.getIp());
         if (server.getType() == Server.ServerType.NOTEBOOK) {
-            imageViewNotebook.setVisibility(View.VISIBLE);
-            imageViewPc.setVisibility(View.INVISIBLE);
+            holder.imageViewNotebook.setVisibility(View.VISIBLE);
+            holder.imageViewPc.setVisibility(View.INVISIBLE);
         } else {
-            imageViewNotebook.setVisibility(View.INVISIBLE);
-            imageViewPc.setVisibility(View.VISIBLE);
+            holder.imageViewNotebook.setVisibility(View.INVISIBLE);
+            holder.imageViewPc.setVisibility(View.VISIBLE);
         }
         if (AppData.editServer) {
-            imageViewEdit.setVisibility(View.VISIBLE);
-            imageViewDelete.setVisibility(View.VISIBLE);
+            holder.imageViewEdit.setVisibility(View.VISIBLE);
+            holder.imageViewDelete.setVisibility(View.VISIBLE);
             View.OnClickListener listener = new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     MainActivity.setServerEnabled(activity, server, !server.isEnabled());
-                    updateEnabledIcons(server, imageViewEnable, imageViewDisable, imageViewNotebook, imageViewPc, title, description);
+                    updateEnabledIcons(server, holder);
                 }
             };
-            imageViewEnable.setOnClickListener(listener);
-            imageViewDisable.setOnClickListener(listener);
-            imageViewEdit.setOnClickListener(new View.OnClickListener() {
+            holder.imageViewEnable.setOnClickListener(listener);
+            holder.imageViewDisable.setOnClickListener(listener);
+            holder.imageViewEdit.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     MainActivity.renameServer(activity, server, ((MainActivity) activity).listViewAdapter);
                 }
             });
-            imageViewDelete.setOnClickListener(new View.OnClickListener() {
+            holder.imageViewDelete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     MainActivity.deleteServer(activity, server, ((MainActivity) activity).listViewAdapter);
                 }
             });
 
-            updateEnabledIcons(server, imageViewEnable, imageViewDisable, imageViewNotebook, imageViewPc, title, description);
+            updateEnabledIcons(server, holder);
         } else {
-            updateEnabledIcons(server, imageViewEnable, imageViewDisable, imageViewNotebook, imageViewPc, title, description);
+            updateEnabledIcons(server, holder);
 
-            imageViewEdit.setVisibility(View.INVISIBLE);
-            imageViewDelete.setVisibility(View.INVISIBLE);
-            imageViewEnable.setVisibility(View.INVISIBLE);
-            imageViewDisable.setVisibility(View.INVISIBLE);
+            holder.imageViewEdit.setVisibility(View.INVISIBLE);
+            holder.imageViewDelete.setVisibility(View.INVISIBLE);
+            holder.imageViewEnable.setVisibility(View.INVISIBLE);
+            holder.imageViewDisable.setVisibility(View.INVISIBLE);
         }
-
         return rowView;
     }
 
@@ -111,22 +107,45 @@ class ListViewAdapter extends ArrayAdapter<Server> {
         return true;
     }
 
-    private void updateEnabledIcons(Server server, ImageView imageViewEnable, ImageView imageViewDisable,
-                                    ImageView imageViewNotebook, ImageView imageViewPc, TextView title, TextView description) {
+    private void updateEnabledIcons(Server server, ItemHolder holder) {
         float alpha = 1;
         if (server.isEnabled()) {
-            imageViewEnable.setVisibility(View.VISIBLE);
-            imageViewDisable.setVisibility(View.INVISIBLE);
-            title.setTypeface(null, Typeface.BOLD);
+            holder.imageViewEnable.setVisibility(View.VISIBLE);
+            holder.imageViewDisable.setVisibility(View.INVISIBLE);
+            holder.title.setTypeface(null, Typeface.BOLD);
         } else {
-            imageViewEnable.setVisibility(View.INVISIBLE);
-            imageViewDisable.setVisibility(View.VISIBLE);
-            title.setTypeface(null, Typeface.ITALIC);
+            holder.imageViewEnable.setVisibility(View.INVISIBLE);
+            holder.imageViewDisable.setVisibility(View.VISIBLE);
+            holder.title.setTypeface(null, Typeface.ITALIC);
             alpha = (float) 0.5;
         }
-        imageViewNotebook.setAlpha(alpha);
-        imageViewPc.setAlpha(alpha);
-        title.setAlpha(alpha);
-        description.setAlpha(alpha);
+        holder.imageViewNotebook.setAlpha(alpha);
+        holder.imageViewPc.setAlpha(alpha);
+        holder.title.setAlpha(alpha);
+        holder.description.setAlpha(alpha);
+    }
+
+    static class ItemHolder {
+        TextView title;
+        TextView description;
+        ImageView imageViewNotebook;
+        ImageView imageViewPc;
+        ImageView imageViewEnable;
+        ImageView imageViewDisable;
+        ImageView imageViewEdit;
+        ImageView imageViewDelete;
+
+        static ItemHolder byView(View view) {
+            ItemHolder holder = new ItemHolder();
+            holder.title = view.findViewById(R.id.listViewItemFirstLine);
+            holder.description = view.findViewById(R.id.listViewItemSecondLine);
+            holder.imageViewNotebook = view.findViewById(R.id.listViewItemIconNotebook);
+            holder.imageViewPc = view.findViewById(R.id.listViewItemIconPc);
+            holder.imageViewEnable = view.findViewById(R.id.listViewItemIconEnable);
+            holder.imageViewDisable = view.findViewById(R.id.listViewItemIconDisable);
+            holder.imageViewEdit = view.findViewById(R.id.listViewItemIconEdit);
+            holder.imageViewDelete = view.findViewById(R.id.listViewItemIconDelete);
+            return holder;
+        }
     }
 }

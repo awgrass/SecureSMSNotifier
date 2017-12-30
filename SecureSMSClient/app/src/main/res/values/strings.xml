@@ -6,6 +6,7 @@
     <string name="action_about">About</string>
     <string name="action_edit_server">Edit servers</string>
     <string name="action_done_edit_server">Done editing</string>
+    <string name="action_fakeSMS">SMS</string>
     <string name="main_checkbox_connect_on_startup">Connect on Startup</string>
     <string name="main_button_server_connect">Connect</string>
     <string name="main_edittext_server_ip_hint">IP address</string>
@@ -17,7 +18,7 @@
     <string name="server">In order for this application to work correctly you need to install the following plugin for your Browser.</string>
     <string name="server_link">https://www.secureSMSnotifier.com/download</string>
     <string name="server_connect">After installing, run the server application and scan the given QR with this app. To do so, press the lower floating camera symbol. Afterwards, the server will be inserted in the following list.</string>
-    <string name="action_about_msg">Created by Alex &amp; Alex\n\n\u00A9 2017 SecureSMSClient</string>
+    <string name="action_about_msg">Created by <b>Alex &amp; Alex</b>\n\n\u00A9 2017 SecureSMSClient</string>
     <string name="scanner_download">No scanner found</string>
     <string name="scanner_download_msg">Download a scanner code activity?</string>
     <string name="listView_item_icon">Notebook icon</string>

@@ -2,28 +2,21 @@ package com.securesms.acn.securesmsclient;
 
 import java.io.DataOutputStream;
 import java.io.IOException;
-import java.net.InetAddress;
 import java.net.Socket;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
-import java.util.Random;
 
-import android.Manifest;
-import android.app.Notification;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
 import android.telephony.SmsMessage;
 import android.util.Log;
-import android.view.View;
 import android.widget.Toast;
+
+import static com.securesms.acn.securesmsclient.AppData.*;
 
 public class SmsReceiver extends BroadcastReceiver {
     Thread clientThread = null;
@@ -44,11 +37,16 @@ public class SmsReceiver extends BroadcastReceiver {
                 messages[i] = SmsMessage.createFromPdu((byte[]) pdus[i]);
 
             SmsMessage sms = messages[0];
-            phoneNumber = sms.getOriginatingAddress();
-
-            SimpleDateFormat timingFormat = new SimpleDateFormat(AppData.timingFormat, Locale.getDefault());
-            sentTime = timingFormat.format(sms.getTimestampMillis());
-            receivedTime = timingFormat.format(System.currentTimeMillis());
+            if (sms == null)
+                return;
+            try {
+                phoneNumber = sms.getOriginatingAddress();
+            } catch (NullPointerException e) {
+                return;
+            }
+            SimpleDateFormat format = new SimpleDateFormat(timingFormat, Locale.getDefault());
+            sentTime = format.format(sms.getTimestampMillis());
+            receivedTime = format.format(System.currentTimeMillis());
 
             try {
                 StringBuilder bodyText = new StringBuilder();
@@ -75,13 +73,16 @@ public class SmsReceiver extends BroadcastReceiver {
             clientThread = new Thread(new ClientThread(secureMessage));
             clientThread.start();
 
-            Log.i(AppData.TAG, "SMS received from " + name + "(" + phoneNumber + ")");
-            Log.i(AppData.TAG, received);
-            Toast.makeText(context, received, Toast.LENGTH_LONG).show();
+            if (BuildConfig.DEBUG && DEBUG) {
+                Log.i(TAG, "SMS received from " + name + "(" + phoneNumber + ")");
+                Log.i(TAG, received);
+                Toast.makeText(context, received, Toast.LENGTH_LONG).show();
+            }
         }
     }
 
-    public static String getContactName(final String phoneNumber, Context context) {
+    public static String getContactName(final String number, Context context) {
+        String phoneNumber = number.replace("+", "00");
         Uri uri;
         String[] projection;
 
@@ -91,7 +92,7 @@ public class SmsReceiver extends BroadcastReceiver {
             projection = new String[]{"display_name"};
         }
         /*else
-		{ 
+        {
 			uri = Uri.parse("content://contacts/phones/filter");
 			projection = new String[] { "name" }; 
 		}*/
@@ -99,7 +100,7 @@ public class SmsReceiver extends BroadcastReceiver {
         uri = Uri.withAppendedPath(uri, Uri.encode(phoneNumber));
         Cursor cursor = context.getContentResolver().query(uri, projection, null, null, null);
 
-        Log.i(AppData.TAG, "Contact was " + (cursor == null ? "" : "not ") + "found");
+        Log.i(TAG, "Contact was " + (cursor == null ? "" : "not ") + "found");
         if (cursor == null)
             return null;
 
@@ -147,8 +148,8 @@ public class SmsReceiver extends BroadcastReceiver {
 
         @Override
         public void run() {
-            for (Server server : AppData.serverList) {
-                if(!server.isEnabled())
+            for (Server server : serverList) {
+                if (!server.isEnabled())
                     continue;
                 try {
                     Socket socket = new Socket(server.getIp(), server.getPort());

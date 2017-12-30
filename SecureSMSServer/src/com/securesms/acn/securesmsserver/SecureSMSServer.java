@@ -6,7 +6,6 @@ import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Image;
 import java.awt.MenuItem;
-import java.awt.Point;
 import java.awt.PopupMenu;
 import java.awt.SystemTray;
 import java.awt.Toolkit;
@@ -20,14 +19,10 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Vector;
 
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 
-import java.awt.datatransfer.Transferable;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ItemEvent;
@@ -37,7 +32,7 @@ public class SecureSMSServer
 {
 	String startString = ". . .";
 	static final int socketServerPORT = 6323;
-	boolean connected;
+	static final int MSG_TIME = 3000;
 	Socket socket = null;
 	ServerSocket inputSocket = null;
 	Thread thread = null;
@@ -45,8 +40,6 @@ public class SecureSMSServer
 	MenuItem connectedItem = null;
 	DataOutputStream out = null;
 	DataInputStream in = null;
-	Transferable oldClipboardContent = null;
-	Vector<Point> threePointsFirstContact = null;
 	Image image;
 
 	public static void main(String[] args) 
@@ -244,7 +237,7 @@ public class SecureSMSServer
 										new Thread(new Runnable() {
 											public void run() {
 												try {
-													Thread.sleep(10000);
+													Thread.sleep(MSG_TIME);
 													dlg.dispose();
 											    }
 											    catch ( Throwable th ) { }

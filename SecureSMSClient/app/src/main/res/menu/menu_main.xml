@@ -3,6 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.securesms.acn.securesmsclient.MainActivity">
     <item
+        android:id="@+id/action_fakeSMS"
+        android:orderInCategory="0"
+        android:icon="@android:drawable/sym_action_chat"
+        android:title="@string/action_fakeSMS"
+        app:showAsAction="ifRoom" />
+    <item
         android:id="@+id/action_add"
         android:orderInCategory="1"
         android:title="@string/action_add"

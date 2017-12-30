@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-land/values-land.xml",
+            "outputFile": "/Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/securesmsnotifier/SecureSMSClient/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-land/values-land.xml",
             "map": [
                 {
                     "source": "/Users/alex/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/9e1a57287b7e1c5ce0f980dd60d3fa3a/res/values-land/values-land.xml",
