@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/listViewItemSecondLine4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/listView_404"
+            android:textAlignment="center"/>
+
+        <ImageView
+            android:id="@+id/listViewItemIconNotebook"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/list_empty_icon"
+            android:layout_margin="10dp"
+            android:contentDescription="@string/listView_item_icon"
+            android:src="@drawable/notebook" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/listViewItemSecondLine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:text="@string/listView_empty"/>
+
+</LinearLayout>

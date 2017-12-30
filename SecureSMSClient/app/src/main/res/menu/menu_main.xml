@@ -1,0 +1,20 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.securesms.acn.securesmsclient.MainActivity">
+    <item
+        android:id="@+id/action_add"
+        android:orderInCategory="1"
+        android:title="@string/action_add"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_edit_server"
+        android:orderInCategory="2"
+        android:title="@string/action_edit_server"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_about"
+        android:orderInCategory="100"
+        android:title="@string/action_about"
+        app:showAsAction="never" />
+</menu>

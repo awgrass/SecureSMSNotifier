@@ -1,0 +1,227 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml:2:1-44:12
+INJECTED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml:2:1-44:12
+INJECTED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml:2:1-44:12
+INJECTED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml:2:1-44:12
+MERGED from [com.android.support:design:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/9e1a57287b7e1c5ce0f980dd60d3fa3a/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:appcompat-v7:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/78e399aaf98707d84ee2e97707a3124c/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/alex/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/c1ce589634bdc15836fcc8260615f73c/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/d5569c90aaf1ec4293b136b4810ba32e/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/5f69c0fe9612ddc3755a21e512a4dab8/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:recyclerview-v7:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/4c670ba0cef2ca79c97a8b8499f203ce/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:transition:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/1586fdc3626f1dd41d01d881a33f147c/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-v4:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/c9d4b13d9d8df94813df72767f3c755e/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-media-compat:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/f4c71a15e025046cace43d588b2cf0a1/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-fragment:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/30fed8e91f3b9672178c29b6b64ff09b/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-core-utils:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/23ac35024beb956e29c469d0a16b6622/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-core-ui:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/8851599f01e9305af5865d7d26819c73/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-compat:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/e64ef552132c33f4233341c9ac35d842/AndroidManifest.xml:17:1-31:12
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/094f3bbde0e143904fcf2cc2912ee7cf/AndroidManifest.xml:17:1-30:12
+INJECTED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml:2:1-44:12
+INJECTED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml:2:1-44:12
+INJECTED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml:2:1-44:12
+	package
+		ADDED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml:3:5-48
+		INJECTED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml
+		ADDED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml:2:1-44:12
+		INJECTED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml
+		ADDED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml:2:1-44:12
+		INJECTED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml:5:5-79
+	android:name
+		ADDED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml:5:22-76
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml:6:5-76
+	android:name
+		ADDED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml:6:22-73
+uses-permission#android.permission.INTERNET
+ADDED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml:7:5-67
+	android:name
+		ADDED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml:7:22-64
+uses-permission#android.permission.READ_CONTACTS
+ADDED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml:8:5-72
+	android:name
+		ADDED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml:8:22-69
+uses-permission#android.permission.READ_SMS
+ADDED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml:9:5-67
+	android:name
+		ADDED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml:9:22-64
+uses-permission#android.permission.RECEIVE_SMS
+ADDED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml:10:5-70
+	android:name
+		ADDED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml:10:22-67
+uses-permission#android.permission.SEND_SMS
+ADDED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml:11:5-67
+	android:name
+		ADDED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml:11:22-64
+uses-permission#android.permission.WRITE_SMS
+ADDED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml:12:5-68
+	android:name
+		ADDED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml:12:22-65
+uses-permission#android.permission.VIBRATE
+ADDED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml:13:5-66
+	android:name
+		ADDED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml:13:22-63
+application
+ADDED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml:15:5-42:19
+MERGED from [com.android.support:design:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/9e1a57287b7e1c5ce0f980dd60d3fa3a/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:design:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/9e1a57287b7e1c5ce0f980dd60d3fa3a/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:appcompat-v7:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/78e399aaf98707d84ee2e97707a3124c/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:appcompat-v7:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/78e399aaf98707d84ee2e97707a3124c/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/alex/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/c1ce589634bdc15836fcc8260615f73c/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/alex/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/c1ce589634bdc15836fcc8260615f73c/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/d5569c90aaf1ec4293b136b4810ba32e/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/d5569c90aaf1ec4293b136b4810ba32e/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/5f69c0fe9612ddc3755a21e512a4dab8/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/5f69c0fe9612ddc3755a21e512a4dab8/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:recyclerview-v7:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/4c670ba0cef2ca79c97a8b8499f203ce/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:recyclerview-v7:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/4c670ba0cef2ca79c97a8b8499f203ce/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:transition:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/1586fdc3626f1dd41d01d881a33f147c/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:transition:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/1586fdc3626f1dd41d01d881a33f147c/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-v4:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/c9d4b13d9d8df94813df72767f3c755e/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-v4:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/c9d4b13d9d8df94813df72767f3c755e/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/f4c71a15e025046cace43d588b2cf0a1/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/f4c71a15e025046cace43d588b2cf0a1/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-fragment:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/30fed8e91f3b9672178c29b6b64ff09b/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-fragment:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/30fed8e91f3b9672178c29b6b64ff09b/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-utils:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/23ac35024beb956e29c469d0a16b6622/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-utils:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/23ac35024beb956e29c469d0a16b6622/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-ui:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/8851599f01e9305af5865d7d26819c73/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-ui:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/8851599f01e9305af5865d7d26819c73/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-compat:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/e64ef552132c33f4233341c9ac35d842/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-compat:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/e64ef552132c33f4233341c9ac35d842/AndroidManifest.xml:25:5-29:19
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/094f3bbde0e143904fcf2cc2912ee7cf/AndroidManifest.xml:24:5-28:19
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/094f3bbde0e143904fcf2cc2912ee7cf/AndroidManifest.xml:24:5-28:19
+	android:supportsRtl
+		ADDED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml:20:9-35
+	android:label
+		ADDED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml:18:9-41
+	android:roundIcon
+		ADDED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml:19:9-54
+	android:icon
+		ADDED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml:17:9-43
+	android:allowBackup
+		ADDED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml:16:9-35
+	android:theme
+		ADDED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml:21:9-40
+receiver#com.securesms.acn.securesmsclient.SmsReceiver
+ADDED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml:23:9-29:20
+	android:exported
+		ADDED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml:25:13-36
+	android:name
+		ADDED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml:24:13-39
+intent-filter#android.provider.Telephony.SMS_RECEIVED
+ADDED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml:26:13-28:29
+	android:priority
+		ADDED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml:26:28-57
+action#android.provider.Telephony.SMS_RECEIVED
+ADDED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml:27:17-82
+	android:name
+		ADDED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml:27:25-79
+activity#com.securesms.acn.securesmsclient.MainActivity
+ADDED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml:31:9-41:20
+	android:screenOrientation
+		ADDED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml:34:13-49
+	android:label
+		ADDED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml:33:13-45
+	android:theme
+		ADDED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml:35:13-56
+	android:name
+		ADDED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml:32:13-41
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml:36:13-40:29
+action#android.intent.action.MAIN
+ADDED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml:37:17-69
+	android:name
+		ADDED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml:37:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml:39:17-77
+	android:name
+		ADDED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml:39:27-74
+uses-sdk
+INJECTED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml
+INJECTED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml
+MERGED from [com.android.support:design:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/9e1a57287b7e1c5ce0f980dd60d3fa3a/AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:design:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/9e1a57287b7e1c5ce0f980dd60d3fa3a/AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:appcompat-v7:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/78e399aaf98707d84ee2e97707a3124c/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:appcompat-v7:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/78e399aaf98707d84ee2e97707a3124c/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/alex/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/c1ce589634bdc15836fcc8260615f73c/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /Users/alex/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/c1ce589634bdc15836fcc8260615f73c/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/d5569c90aaf1ec4293b136b4810ba32e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/d5569c90aaf1ec4293b136b4810ba32e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/5f69c0fe9612ddc3755a21e512a4dab8/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/5f69c0fe9612ddc3755a21e512a4dab8/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/4c670ba0cef2ca79c97a8b8499f203ce/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/4c670ba0cef2ca79c97a8b8499f203ce/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/1586fdc3626f1dd41d01d881a33f147c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/1586fdc3626f1dd41d01d881a33f147c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/c9d4b13d9d8df94813df72767f3c755e/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/c9d4b13d9d8df94813df72767f3c755e/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-media-compat:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/f4c71a15e025046cace43d588b2cf0a1/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-media-compat:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/f4c71a15e025046cace43d588b2cf0a1/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-fragment:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/30fed8e91f3b9672178c29b6b64ff09b/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-fragment:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/30fed8e91f3b9672178c29b6b64ff09b/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-core-utils:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/23ac35024beb956e29c469d0a16b6622/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-utils:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/23ac35024beb956e29c469d0a16b6622/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-ui:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/8851599f01e9305af5865d7d26819c73/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-ui:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/8851599f01e9305af5865d7d26819c73/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/e64ef552132c33f4233341c9ac35d842/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/e64ef552132c33f4233341c9ac35d842/AndroidManifest.xml:21:5-23:58
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/094f3bbde0e143904fcf2cc2912ee7cf/AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/094f3bbde0e143904fcf2cc2912ee7cf/AndroidManifest.xml:20:5-22:41
+INJECTED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml
+INJECTED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml
+	tools:overrideLibrary
+		ADDED from [com.android.support:design:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/9e1a57287b7e1c5ce0f980dd60d3fa3a/AndroidManifest.xml:23:9-59
+	android:targetSdkVersion
+		INJECTED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml
+		ADDED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml
+		ADDED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/alex/Documents/Uni/Master/1. Semester/ACN/UE/Task2/SecureSMSClient/app/src/main/AndroidManifest.xml
+meta-data#android.support.VERSION
+ADDED from [com.android.support:design:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/9e1a57287b7e1c5ce0f980dd60d3fa3a/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:appcompat-v7:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/78e399aaf98707d84ee2e97707a3124c/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:appcompat-v7:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/78e399aaf98707d84ee2e97707a3124c/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/d5569c90aaf1ec4293b136b4810ba32e/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-26.1.0.aar/d5569c90aaf1ec4293b136b4810ba32e/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/5f69c0fe9612ddc3755a21e512a4dab8/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-vector-drawable:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-26.1.0.aar/5f69c0fe9612ddc3755a21e512a4dab8/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:recyclerview-v7:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/4c670ba0cef2ca79c97a8b8499f203ce/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:recyclerview-v7:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/4c670ba0cef2ca79c97a8b8499f203ce/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:transition:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/1586fdc3626f1dd41d01d881a33f147c/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:transition:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/1586fdc3626f1dd41d01d881a33f147c/AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-v4:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/c9d4b13d9d8df94813df72767f3c755e/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-v4:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/c9d4b13d9d8df94813df72767f3c755e/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/f4c71a15e025046cace43d588b2cf0a1/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/f4c71a15e025046cace43d588b2cf0a1/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-fragment:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/30fed8e91f3b9672178c29b6b64ff09b/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-fragment:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/support-fragment-26.1.0.aar/30fed8e91f3b9672178c29b6b64ff09b/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-utils:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/23ac35024beb956e29c469d0a16b6622/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-utils:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/support-core-utils-26.1.0.aar/23ac35024beb956e29c469d0a16b6622/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-ui:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/8851599f01e9305af5865d7d26819c73/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-ui:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/support-core-ui-26.1.0.aar/8851599f01e9305af5865d7d26819c73/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-compat:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/e64ef552132c33f4233341c9ac35d842/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-compat:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/e64ef552132c33f4233341c9ac35d842/AndroidManifest.xml:26:9-28:38
+	android:value
+		ADDED from [com.android.support:design:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/9e1a57287b7e1c5ce0f980dd60d3fa3a/AndroidManifest.xml:28:13-35
+	android:name
+		ADDED from [com.android.support:design:26.1.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/9e1a57287b7e1c5ce0f980dd60d3fa3a/AndroidManifest.xml:27:13-51
+meta-data#android.arch.lifecycle.VERSION
+ADDED from [android.arch.lifecycle:runtime:1.0.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/094f3bbde0e143904fcf2cc2912ee7cf/AndroidManifest.xml:25:9-27:47
+	android:value
+		ADDED from [android.arch.lifecycle:runtime:1.0.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/094f3bbde0e143904fcf2cc2912ee7cf/AndroidManifest.xml:27:13-44
+	android:name
+		ADDED from [android.arch.lifecycle:runtime:1.0.0] /Users/alex/.gradle/caches/transforms-1/files-1.1/runtime-1.0.0.aar/094f3bbde0e143904fcf2cc2912ee7cf/AndroidManifest.xml:26:13-58
