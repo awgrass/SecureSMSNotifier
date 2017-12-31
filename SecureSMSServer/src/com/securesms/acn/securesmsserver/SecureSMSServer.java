@@ -117,7 +117,30 @@ public class SecureSMSServer
 //			//inputItem.setEnabled(false);
 //			popup.add(inputItem);
 
+			String ip_adress = "N/A";
+			try
+			{
+				InetAddress ip = InetAddress.getLocalHost();
+				ip_adress = ip.getHostAddress();
+			}
+			catch (UnknownHostException e)
+			{
+				e.printStackTrace();
+			}
+
+			final String ip = ip_adress;
 			connectedItem = new MenuItem(startString);
+			connectedItem.addActionListener(new ActionListener()
+			{
+				public void actionPerformed(ActionEvent e)
+				{
+					String message = "<html><a rel='nofollow' href='http://www.qrcode-generator.de' border='0' style='cursor:default'><img src='https://chart.googleapis.com/chart?cht=qr&chl=MyNotebook%7CX4Eg5jKo0Xw4%7C" + ip + "%7C6323%7C1&chs=180x180&choe=UTF-8&chld=L|2' border='0' alt=''></a></html>";
+					JOptionPane opt = new JOptionPane(message,JOptionPane.PLAIN_MESSAGE, JOptionPane.DEFAULT_OPTION, null, new Object[]{});
+					final JDialog dlg = opt.createDialog("QR Code");
+					dlg.setVisible(true);
+					dlg.toFront();
+				}
+			});
 			popup.add(connectedItem);
 			popup.add("-");
 
@@ -133,17 +156,7 @@ public class SecureSMSServer
 
 			});
 			popup.add(launchItem);
-
-			String ip_adress = "N/A";
-			try
-			{
-				InetAddress ip = InetAddress.getLocalHost();
-				ip_adress = ip.getHostAddress();
-			}
-			catch (UnknownHostException e)
-			{
-				e.printStackTrace();
-			}
+			
 			MenuItem ipItem = new MenuItem("IP Address: " + ip_adress);
 			ipItem.setEnabled(false);
 			popup.add(ipItem);
