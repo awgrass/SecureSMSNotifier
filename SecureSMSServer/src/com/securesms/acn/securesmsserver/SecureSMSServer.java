@@ -2,6 +2,7 @@ package com.securesms.acn.securesmsserver;
 
 import java.awt.AWTException;
 import java.awt.CheckboxMenuItem;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Image;
@@ -28,6 +29,17 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
+import ch.swingfx.color.ColorUtil;
+import ch.swingfx.twinkle.NotificationBuilder;
+import ch.swingfx.twinkle.event.NotificationEvent;
+import ch.swingfx.twinkle.event.NotificationEventAdapter;
+import ch.swingfx.twinkle.style.INotificationStyle;
+import ch.swingfx.twinkle.style.closebutton.RectangleCloseButton;
+import ch.swingfx.twinkle.style.theme.DarkDefaultNotification;
+import ch.swingfx.twinkle.window.Positions;
+
+import javax.swing.*;
+
 public class SecureSMSServer
 {
 	String startString = ". . .";
@@ -44,14 +56,14 @@ public class SecureSMSServer
 
 	public static void main(String[] args) 
 	{
-		try
+		/*try
 		{
 			System.setProperty("apple.awt.UIElement", "true"); 
 		}
 		catch(Exception e)
 		{
 			e.printStackTrace();
-		}
+		}*/
 
 
 		EventQueue.invokeLater(new Runnable() 
@@ -234,6 +246,7 @@ public class SecureSMSServer
 
 						if(inputs.size() != 5)
 							return;
+						
 						final List<String> finalInputs = inputs; 
 
 						new Thread(new Runnable()
@@ -242,24 +255,30 @@ public class SecureSMSServer
 							public void run()
 							{
 								final String message = finalInputs.get(2) + "\n\n" + finalInputs.get(3) + " (" + finalInputs.get(4) + ")";
+								final String title = "SMS from " + finalInputs.get(0) + " (" + finalInputs.get(1) +")";
 								connectedItem.setLabel(finalInputs.get(2).substring(0, finalInputs.get(2).length() > 30 ? 30 : finalInputs.get(2).length()) + "...");
-								new Thread(new Runnable() {
-									public void run() {
-										JOptionPane opt = new JOptionPane(message,JOptionPane.INFORMATION_MESSAGE, JOptionPane.DEFAULT_OPTION, null, new Object[]{});
-										final JDialog dlg = opt.createDialog("SMS from " + finalInputs.get(0) + " (" + finalInputs.get(1) +")");
-										new Thread(new Runnable() {
-											public void run() {
-												try {
-													Thread.sleep(MSG_TIME);
-													dlg.dispose();
-											    }
-											    catch ( Throwable th ) { }
+								
+								System.setProperty("swing.aatext", "true");
+								INotificationStyle style = new DarkDefaultNotification()
+										.withWidth(400) 
+										.withAlpha(0.9f) 
+								;
+								new NotificationBuilder()
+										.withStyle(style) 
+										.withTitle(title) 
+										.withMessage(message)
+										.withIcon(new ImageIcon(SecureSMSServer.class.getResource("notification.png"))) 
+										.withDisplayTime(5000) 
+										.withPosition(Positions.NORTH_EAST) 
+										.withListener(new NotificationEventAdapter() { 
+											public void closed(NotificationEvent event) {
+												System.out.println("closed notification with UUID " + event.getId());
 											}
-										}).start();
-										dlg.setVisible(true);
-										dlg.toFront();
-									}
-								}).start();
+
+											public void clicked(NotificationEvent event) {
+												System.out.println("clicked notification with UUID " + event.getId());
+											}
+										}).showNotification(); 
 							}
 						}).run();
 					}

@@ -1,7 +1,12 @@
 .DS_Store
-*/*/.idea
-*/.idea
-.idea
+*/*/*/.idea/*
+*/*/.idea/*
+*/.idea/*
+.idea/*
+*/*/*/bin/*
+*/*/bin/*
+*/bin/*
+bin/*
 */*/*/android-profile/*
 */*/android-profile/*
 */android-profile/*

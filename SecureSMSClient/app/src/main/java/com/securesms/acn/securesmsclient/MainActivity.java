@@ -188,7 +188,7 @@ public class MainActivity extends AppCompatActivity {
                         if (aboutClicked >= 7) {
                             aboutClicked = 0;
                             DEBUG = !DEBUG;
-                            fakeSMSItem.setVisible(DEBUG);
+                            fakeSMSItem. setVisible(DEBUG);
                             SharedPreferences.Editor prefsEditor = preferences.edit();
                             prefsEditor.putBoolean(prefKeyDebug, DEBUG);
                             prefsEditor.commit();
