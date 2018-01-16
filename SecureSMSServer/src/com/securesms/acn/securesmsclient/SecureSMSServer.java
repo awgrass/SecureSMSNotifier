@@ -79,7 +79,7 @@ public class SecureSMSServer
                         }
 
                         if(newMessage && inputs.size() != 5)
-                            return;
+                            continue;
                         if(newQRcode && inputs.size() == 1) {
                             //System.out.println("QR code received: " + inputs.get(0));
                             Platform.runLater(new Runnable() {
@@ -87,7 +87,7 @@ public class SecureSMSServer
                                     controller.loadMessageFrame();
                                 }
                             });
-                            return;
+                            continue;
                         }
 
                         final List<String> finalInputs = inputs;
@@ -99,10 +99,6 @@ public class SecureSMSServer
                                 controller.appendMessage(message);
                             }
                         });
-
-                        for (String s: finalInputs){
-                            System.out.println(s);
-                        }
                     }
                     catch (IOException e)
                     {
