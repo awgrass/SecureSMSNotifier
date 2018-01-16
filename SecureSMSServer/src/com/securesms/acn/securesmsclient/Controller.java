@@ -85,7 +85,7 @@ public class Controller {
         contentPane.getChildren().clear();
         try{
             FXMLLoader loader = new FXMLLoader(getClass().getResource("MessageView.fxml"));
-            AnchorPane messageView = (AnchorPane)loader.load();
+            AnchorPane messageView = loader.load();
             AnchorPane.setTopAnchor(messageView, 0.0);
             AnchorPane.setLeftAnchor(messageView, 0.0);
             AnchorPane.setRightAnchor(messageView, 0.0);
