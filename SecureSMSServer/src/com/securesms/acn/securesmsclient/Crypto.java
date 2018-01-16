@@ -1,4 +1,4 @@
-package sample;
+package com.securesms.acn.securesmsclient;
 
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;

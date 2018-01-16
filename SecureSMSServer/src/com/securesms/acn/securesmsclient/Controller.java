@@ -1,40 +1,38 @@
-package sample;
+package com.securesms.acn.securesmsclient;
 
+import ch.swingfx.twinkle.NotificationBuilder;
+import ch.swingfx.twinkle.event.NotificationEvent;
+import ch.swingfx.twinkle.event.NotificationEventAdapter;
+import ch.swingfx.twinkle.style.INotificationStyle;
+import ch.swingfx.twinkle.style.theme.DarkDefaultNotification;
+import ch.swingfx.twinkle.window.Positions;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.QRCodeWriter;
+import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.beans.value.WritableListValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.WritableImage;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
 import javafx.scene.canvas.Canvas;
-import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
-import sun.plugin.javascript.navig.Anchor;
 
-import javax.crypto.KeyGenerator;
+import javax.swing.*;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.prefs.Preferences;
 
 
 public class Controller {
@@ -74,10 +72,16 @@ public class Controller {
         String qrData = constructQrData();
         WritableImage snapshot = getQRCodeImage(qrData, 250, 250);
         qrView.setImage(snapshot);
-        //loadMessageFrame();
+
+
+        Preferences prefs = Preferences.userNodeForPackage(Controller.class);
+        if(prefs.getBoolean("QRCODE_FOUND", false))
+            loadMessageFrame();
     }
 
-    void loadMessageFrame(){
+    public void loadMessageFrame(){
+        Preferences prefs = Preferences.userNodeForPackage(Controller.class);
+        prefs.putBoolean("QRCODE_FOUND", true);
         contentPane.getChildren().clear();
         try{
             FXMLLoader loader = new FXMLLoader(getClass().getResource("MessageView.fxml"));
@@ -109,19 +113,54 @@ public class Controller {
         });
     }
 
-    public void appendMessage(String name, ArrayList<String> message){
-        String composedMessage = "";
-        for (String m: message){
-            composedMessage += m + "\n";
-        }
+    public void appendMessage(SecureMessage message){
+        final String name = message.getSender() + " (" + message.getNumber() + ")";
+        final String composedMessage = message.getMessage() + "\n\n" + message.getReceivedTime() + " (" + message.getSentTime() + ")";
         if (!fromToMessagesMap.containsKey(name)){
             fromListViewItems.add(name);
             fromListViewItems.sort(String::compareToIgnoreCase);
             fromToMessagesMap.put(name, FXCollections.observableArrayList());
         }
-        fromToMessagesMap.get(name).add(composedMessage);
-        messageListView.setItems(fromToMessagesMap.get(name));
+        if(fromToMessagesMap.get(name) != null) {
+            fromToMessagesMap.get(name).add(composedMessage);
+            messageListView.setItems(fromToMessagesMap.get(name));
+            if(true) // TODO: check if notification should be shown
+                showNotification(message);
+        }
+    }
 
+    private void showNotification(SecureMessage secureMessage) {
+        final String message = secureMessage.getMessage() + "\n\n" + secureMessage.getReceivedTime() + " (" + secureMessage.getSentTime() + ")";
+        final String title = "SMS from " + secureMessage.getSender() + " (" + secureMessage.getNumber() +")";
+
+        System.setProperty("swing.aatext", "true");
+        INotificationStyle style = new DarkDefaultNotification()
+                .withWidth(400)
+                .withAlpha(0.9f)
+                ;
+        final Controller controller = this;
+        new NotificationBuilder()
+                .withStyle(style)
+                .withTitle(title)
+                .withMessage(message)
+                .withIcon(new ImageIcon(SecureSMSServer.class.getResource("notification.png")))
+                .withDisplayTime(5000)
+                .withPosition(Positions.NORTH_EAST)
+                .withListener(new NotificationEventAdapter() {
+                    public void closed(NotificationEvent event) {
+                    }
+
+                    public void clicked(NotificationEvent event) {
+                        Platform.runLater(new Runnable() {
+                            public void run() {
+                                controller.stage.setAlwaysOnTop(true);
+                                controller.stage.toFront();
+                                controller.stage.requestFocus();
+                                controller.stage.setAlwaysOnTop(false);
+                            }
+                        });
+                    }
+                }).showNotification();
     }
 
     private WritableImage getQRCodeImage(String qrData, int width, int height) {

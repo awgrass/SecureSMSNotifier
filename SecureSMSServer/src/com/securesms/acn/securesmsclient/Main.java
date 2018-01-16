@@ -1,4 +1,4 @@
-package sample;
+package com.securesms.acn.securesmsclient;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

@@ -10,7 +10,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="667.0" prefWidth="805.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<AnchorPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="667.0" prefWidth="805.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.securesms.acn.securesmsclient.Controller">
    <children>
       <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>
@@ -41,7 +41,7 @@
          <top>
             <BorderPane prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #39a67f;" BorderPane.alignment="CENTER">
                <center>
-                  <Label prefHeight="52.0" prefWidth="287.0" text="Secure SMS notifier" BorderPane.alignment="CENTER">
+                  <Label prefHeight="52.0" prefWidth="287.0" text="Secure SMS Notifier" BorderPane.alignment="CENTER">
                      <font>
                         <Font size="30.0" />
                      </font>

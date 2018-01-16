@@ -1,7 +1,6 @@
-package sample;
+package com.securesms.acn.securesmsclient;
 
 import javafx.application.Platform;
-import javafx.concurrent.Task;
 
 import java.awt.Image;
 import java.awt.MenuItem;
@@ -64,34 +63,40 @@ public class SecureSMSServer
                         out = new DataOutputStream(socket.getOutputStream());
                         List<String> inputs = new ArrayList<String>();
                         String input;
-                        boolean newMessage = false;
+                        boolean newMessage = false, newQRcode = false;
 
                         while((input = in.readUTF()) != null)
                         {
-                            if(input.equals("SMS END"))
-                                break;
-                            if(newMessage)
+                            //if(input.equals("SMS END") || input.equals("QR CODE END"))
+                            if(newMessage || newQRcode)
                                 inputs.add(input);
-                            if(input.equals("SMS BEGIN"))
+                            if((newMessage && inputs.size() == 5) || (newQRcode && inputs.size() == 1))
+                                break;
+                            if(!newMessage && !newQRcode && input.equals("SMS BEGIN"))
                                 newMessage = true;
+                            if(!newMessage && !newQRcode && input.equals("QR CODE BEGIN"))
+                                newQRcode = true;
                         }
 
-                        if(inputs.size() != 5)
+                        if(newMessage && inputs.size() != 5)
                             return;
+                        if(newQRcode && inputs.size() == 1) {
+                            //System.out.println("QR code received: " + inputs.get(0));
+                            Platform.runLater(new Runnable() {
+                                public void run() {
+                                    controller.loadMessageFrame();
+                                }
+                            });
+                            return;
+                        }
+
                         final List<String> finalInputs = inputs;
 
-                        String name = finalInputs.get(0);
-                        String number = finalInputs.get(1);
-                        ArrayList<String> message = new ArrayList<>();
-                        int i = 2;
-                        for (; i < finalInputs.size()- 2; ++i){
-                            message.add(finalInputs.get(i));
-                        }
-                        String sent = finalInputs.get(i);
+                        SecureMessage message = new SecureMessage(finalInputs.get(2), finalInputs.get(0), finalInputs.get(1), finalInputs.get(3), finalInputs.get(4));
 
                         Platform.runLater(new Runnable() {
                             @Override public void run() {
-                                controller.appendMessage(name, message);
+                                controller.appendMessage(message);
                             }
                         });
 
