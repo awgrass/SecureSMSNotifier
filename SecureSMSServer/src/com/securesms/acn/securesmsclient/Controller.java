@@ -26,7 +26,6 @@ import javafx.scene.layout.Pane;
 import javafx.scene.canvas.Canvas;
 import javafx.stage.Stage;
 
-import javax.swing.*;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -124,7 +123,7 @@ public class Controller {
         if(fromToMessagesMap.get(name) != null) {
             fromToMessagesMap.get(name).add(composedMessage);
             messageListView.setItems(fromToMessagesMap.get(name));
-            if(true) // TODO: check if notification should be shown
+            if(!stage.isFocused())
                 showNotification(message);
         }
     }
@@ -143,7 +142,7 @@ public class Controller {
                 .withStyle(style)
                 .withTitle(title)
                 .withMessage(message)
-                .withIcon(new ImageIcon(SecureSMSServer.class.getResource("notification.png")))
+                .withIcon(new javax.swing.ImageIcon(SecureSMSServer.class.getResource("notification.png")))
                 .withDisplayTime(5000)
                 .withPosition(Positions.NORTH_EAST)
                 .withListener(new NotificationEventAdapter() {
