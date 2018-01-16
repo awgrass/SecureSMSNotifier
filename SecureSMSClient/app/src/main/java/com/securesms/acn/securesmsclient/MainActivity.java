@@ -37,10 +37,12 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.io.ByteArrayOutputStream;
+import java.io.DataOutputStream;
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Type;
 import java.net.InetAddress;
+import java.net.Socket;
 import java.net.UnknownHostException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -252,6 +254,8 @@ public class MainActivity extends AppCompatActivity {
                     i++;
                 }
                 addServer(server);
+                Thread thread = new Thread(new QRCodeThread(contents, server));
+                thread.start();
             }
         }
 //      super.onActivityResult(requestCode, resultCode, data);
@@ -559,6 +563,46 @@ public class MainActivity extends AppCompatActivity {
     public static void setServerEnabled(Activity activity, Server server, boolean enabled) {
         server.setEnabled(enabled);
         saveServerList(activity.getApplicationContext());
+    }
+
+    class QRCodeThread implements Runnable {
+        private final String qrcode;
+        private final Server server;
+
+        QRCodeThread(final String qrcode, final Server server) {
+            this.qrcode = qrcode;
+            this.server = server;
+        }
+
+        @Override
+        public void run() {
+            try {
+                Socket socket = new Socket(server.getIp(), server.getPort());
+                QRCodeFound(socket, qrcode);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void QRCodeFound(final Socket socket, final String qrcode) {
+        if (socket != null) {
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        DataOutputStream out = new DataOutputStream(socket.getOutputStream());
+                        out.writeUTF("QR CODE BEGIN");
+                        out.writeUTF(qrcode);
+                        //out.writeUTF("QR CODE End");
+                        out.close();
+                        socket.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }).start();
+        }
     }
     //endregion
 

@@ -1,11 +1,16 @@
 package com.securesms.acn.securesmsclient;
 
+import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.io.EOFException;
 import java.io.IOException;
 import java.net.Socket;
+import java.net.SocketException;
+import java.net.UnknownHostException;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 
+import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -128,7 +133,7 @@ public class SmsReceiver extends BroadcastReceiver {
                         out.writeUTF(output.getMessage());
                         out.writeUTF(output.getReceivedTime());
                         out.writeUTF(output.getSentTime());
-                        out.writeUTF("SMS END");
+                        //out.writeUTF("SMS END");
                         out.close();
                         socket.close();
                     } catch (IOException e) {
@@ -154,6 +159,7 @@ public class SmsReceiver extends BroadcastReceiver {
                 try {
                     Socket socket = new Socket(server.getIp(), server.getPort());
                     sendToServer(socket, output);
+
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
