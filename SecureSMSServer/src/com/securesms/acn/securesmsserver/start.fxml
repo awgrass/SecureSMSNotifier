@@ -33,22 +33,6 @@
                <effect>
                   <DropShadow height="60.46" radius="19.865000000000002" spread="0.15" />
                </effect>
-               <right>
-                  <ImageView fx:id="openQRView" fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
-                     <image>
-                        <Image url="@qr.png" />
-                     </image>
-                     <BorderPane.margin>
-                        <Insets right="20.0" />
-                     </BorderPane.margin>
-                     <effect>
-                        <Reflection topOffset="3.0" />
-                     </effect>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </ImageView>
-               </right>
                <top>
                   <BorderPane prefHeight="20.0" prefWidth="20.0" BorderPane.alignment="CENTER">
                      <left>
@@ -79,6 +63,22 @@
                            </children>
                         </FlowPane>
                      </left>
+                     <right>
+                        <ImageView fx:id="openQRView" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                           <image>
+                              <Image url="@qr.png" />
+                           </image>
+                           <BorderPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </BorderPane.margin>
+                           <effect>
+                              <Reflection topOffset="3.0" />
+                           </effect>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </right>
                   </BorderPane>
                </top>
             </BorderPane>
