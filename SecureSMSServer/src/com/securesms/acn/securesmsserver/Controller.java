@@ -83,14 +83,14 @@ public class Controller {
 
     private HashMap<String, ObservableList<SecureMessage>> fromToMessagesMap = new HashMap<>();
     private final String PREF_IP_KEY = "QRCODE_FOUND";
+    private final String PREF_KEY_KEY = "KEYS_FOUND";
 
     private boolean isMessageView;
     private Crypto crypto;
 
 
-    void initStage(Stage stage, Crypto crypto){
+    Crypto initStage(Stage stage){
         this.stage = stage;
-        this.crypto = crypto;
         ResizeHelper.addResizeListener(stage);
 
         headerClose.setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -137,10 +137,16 @@ public class Controller {
         });
 
         String ip = getIPAddress();
-        if(ip != null && alreadyExists(ip, false))
+        String key = alreadyExists(ip, false);
+        if(ip != null && key != null) {
+            this.crypto = new Crypto(key);
             loadMessageFrame();
-        else
+        }
+        else {
+            this.crypto = new Crypto(null);
             loadQRFrame();
+        }
+        return crypto;
     }
 
     public void loadMessageFrame(){
@@ -273,19 +279,24 @@ public class Controller {
         qrView.setImage(snapshot);
     }
 
-    public boolean alreadyExists(String ip, boolean add) {
-        boolean found = false;
+    public String alreadyExists(String ip, boolean add) {
+        String found_key = null;
         List<String> ips = new ArrayList<>();
         Preferences prefs = Preferences.userNodeForPackage(Controller.class);
-        //prefs.putByteArray(PREF_IP_KEY, new byte[0]);
+        // TODO: uncomment for clean server list
+        // prefs.putByteArray(PREF_IP_KEY, new byte[0]);
+        // prefs.putByteArray(PREF_KEY_KEY, new byte[0]);
         byte[] bytes = prefs.getByteArray(PREF_IP_KEY, null);
+        byte[] bytes_keys = prefs.getByteArray(PREF_KEY_KEY, null);
         if(bytes != null) {
             DataInputStream in = new DataInputStream(new ByteArrayInputStream(bytes));
+            DataInputStream in_keys = new DataInputStream(new ByteArrayInputStream(bytes_keys));
             try {
                 while (in.available() > 0) {
                     String input = in.readUTF();
+                    String key = in_keys.readUTF();
                     if(ip.equals(input))
-                        found = true;
+                        found_key = key;
                     ips.add(input);
                 }
             }
@@ -296,7 +307,7 @@ public class Controller {
                 e.printStackTrace();
             }
         }
-        if(!found && add) {
+        if(found_key == null && add) {
             ips.add(ip);
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             DataOutputStream out = new DataOutputStream(baos);
@@ -310,7 +321,7 @@ public class Controller {
             }
             prefs.putByteArray(PREF_IP_KEY, baos.toByteArray());
         }
-        return found;
+        return found_key;
     }
 
     public void appendMessage(SecureMessage message){

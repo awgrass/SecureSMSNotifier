@@ -25,7 +25,6 @@ public class SecureSMSServer {
     DataInputStream in = null;
     Image image;
     private Controller controller;
-    private Crypto crypto;
 
     /**
      * Create the application.
@@ -33,18 +32,21 @@ public class SecureSMSServer {
     @SuppressWarnings("resource")
     public SecureSMSServer(Controller controller, Crypto crypto) {
         this.controller = controller;
-        this.crypto = crypto;
-        OpenServer();
+        OpenServer(crypto);
     }
 
 
-    public void OpenServer() {
-        thread = new Thread(new ServerThread());
+    public void OpenServer(Crypto crypto) {
+        thread = new Thread(new ServerThread(crypto));
         thread.start();
     }
 
     class ServerThread implements Runnable
     {
+        private Crypto crypto;
+        ServerThread(Crypto crypto) {
+            this.crypto = crypto;
+        }
         @Override
         public void run()
         {
