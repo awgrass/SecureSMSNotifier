@@ -24,7 +24,6 @@ import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.WritableImage;
 import javafx.scene.input.MouseEvent;
@@ -414,7 +413,7 @@ public class Controller {
             System.out.println("Error: " + e);
         }
 
-        String qrData = computerName + "|" + crypto.getKeyBase64() + "|" + ip + "|" + SecureSMSServer.socketServerPORT + "|1";
+        String qrData = computerName + "|" + crypto.convertKeyToBase64() + "|" + ip + "|" + SecureSMSServer.socketServerPORT + "|1";
         return qrData;
     }
 
