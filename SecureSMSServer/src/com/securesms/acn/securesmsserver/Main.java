@@ -16,6 +16,7 @@ import java.net.URL;
 public class Main extends Application {
 
     Controller controller = null;
+    Crypto crypto = null;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -29,9 +30,11 @@ public class Main extends Application {
             primaryStage.setScene(new Scene(root, 770, 600));
             primaryStage.show();
 
+            crypto  = new Crypto();
+
             //init Controller
             controller = loader.getController();
-            controller.initStage(primaryStage);
+            controller.initStage(primaryStage, crypto);
 
 
         }
@@ -55,7 +58,7 @@ public class Main extends Application {
                 try
                 {
                     //RemoteServer window =
-                    new SecureSMSServer(controller);
+                    new SecureSMSServer(controller, crypto);
                 }
                 catch (Exception e)
                 {

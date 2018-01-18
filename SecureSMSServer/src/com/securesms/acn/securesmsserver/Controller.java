@@ -85,10 +85,12 @@ public class Controller {
     private final String PREF_IP_KEY = "QRCODE_FOUND";
 
     private boolean isMessageView;
+    private Crypto crypto;
 
 
-    void initStage(Stage stage){
+    void initStage(Stage stage, Crypto crypto){
         this.stage = stage;
+        this.crypto = crypto;
         ResizeHelper.addResizeListener(stage);
 
         headerClose.setOnMouseClicked(new EventHandler<MouseEvent>() {
@@ -401,7 +403,7 @@ public class Controller {
             System.out.println("Error: " + e);
         }
 
-        String qrData = computerName + "|X4Eg5jKo0Xw4|" + ip + "|" + SecureSMSServer.socketServerPORT + "|1";
+        String qrData = computerName + "|" + crypto.getKeyBase64() + "|" + ip + "|" + SecureSMSServer.socketServerPORT + "|1";
         return qrData;
     }
 
