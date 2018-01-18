@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
@@ -17,13 +18,16 @@
                      <cursor>
                         <Cursor fx:constant="DEFAULT" />
                      </cursor></ListView>
-                  <Label layoutX="-33.0" layoutY="-11.0" prefHeight="47.0" prefWidth="269.0" text=" From:" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <Label alignment="BOTTOM_CENTER" layoutX="-33.0" layoutY="-11.0" prefHeight="47.0" prefWidth="269.0" text=" From" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <font>
-                        <Font size="20.0" />
+                        <Font size="18.0" />
                      </font>
                      <cursor>
                         <Cursor fx:constant="DEFAULT" />
                      </cursor>
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
                   </Label>
                </children>
             </AnchorPane>
@@ -33,13 +37,16 @@
                      <cursor>
                         <Cursor fx:constant="DEFAULT" />
                      </cursor></ListView>
-                  <Label layoutX="53.0" layoutY="11.0" prefHeight="46.0" prefWidth="570.0" text=" Messages:" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <Label alignment="BOTTOM_CENTER" layoutX="53.0" layoutY="11.0" prefHeight="46.0" prefWidth="570.0" text=" Messages" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <font>
-                        <Font size="20.0" />
+                        <Font size="18.0" />
                      </font>
                      <cursor>
                         <Cursor fx:constant="DEFAULT" />
                      </cursor>
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
                   </Label>
                </children>
             </AnchorPane>

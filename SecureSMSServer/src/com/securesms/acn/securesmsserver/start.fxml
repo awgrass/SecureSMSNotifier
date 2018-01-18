@@ -22,66 +22,73 @@
             </AnchorPane>
          </center>
          <top>
-            <BorderPane fx:id="header" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #3F51B5;" BorderPane.alignment="CENTER">
-               <center>
-                  <Label prefHeight="52.0" prefWidth="287.0" text="Secure SMS Notifier" textFill="WHITE" BorderPane.alignment="CENTER">
-                     <font>
-                        <Font size="30.0" />
-                     </font>
-                  </Label>
-               </center>
+            <AnchorPane prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #3F51B5;" BorderPane.alignment="CENTER">
                <effect>
                   <DropShadow height="60.46" radius="19.865000000000002" spread="0.15" />
                </effect>
-               <top>
-                  <BorderPane prefHeight="20.0" prefWidth="20.0" BorderPane.alignment="CENTER">
-                     <left>
-                        <FlowPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-                           <children>
-                              <ImageView fx:id="headerClose" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <children>
+                  <BorderPane fx:id="header" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0">
+                     <center>
+                        <Label prefHeight="52.0" prefWidth="287.0" text="Secure SMS Notifier" textFill="WHITE" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                           <padding>
+                              <Insets bottom="20.0" />
+                           </padding>
+                        </Label>
+                     </center>
+                     <top>
+                        <BorderPane prefHeight="20.0" prefWidth="20.0" BorderPane.alignment="CENTER">
+                           <left>
+                              <FlowPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <ImageView fx:id="headerClose" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@x.png" />
+                                       </image>
+                                       <FlowPane.margin>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </FlowPane.margin>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ImageView>
+                                    <ImageView fx:id="headerMin" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@min.png" />
+                                       </image>
+                                       <FlowPane.margin>
+                                          <Insets bottom="10.0" right="10.0" top="10.0" />
+                                       </FlowPane.margin>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </ImageView>
+                                 </children>
+                              </FlowPane>
+                           </left>
+                           <right>
+                              <ImageView fx:id="openQRView" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
                                  <image>
-                                    <Image url="@x.png" />
+                                    <Image url="@qr.png" />
                                  </image>
-                                 <FlowPane.margin>
+                                 <BorderPane.margin>
                                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                                 </FlowPane.margin>
+                                 </BorderPane.margin>
+                                 <effect>
+                                    <Reflection topOffset="3.0" />
+                                 </effect>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
                               </ImageView>
-                              <ImageView fx:id="headerMin" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@min.png" />
-                                 </image>
-                                 <FlowPane.margin>
-                                    <Insets bottom="10.0" right="10.0" top="10.0" />
-                                 </FlowPane.margin>
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
-                              </ImageView>
-                           </children>
-                        </FlowPane>
-                     </left>
-                     <right>
-                        <ImageView fx:id="openQRView" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
-                           <image>
-                              <Image url="@qr.png" />
-                           </image>
-                           <BorderPane.margin>
-                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                           </BorderPane.margin>
-                           <effect>
-                              <Reflection topOffset="3.0" />
-                           </effect>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </ImageView>
-                     </right>
+                           </right>
+                        </BorderPane>
+                     </top>
                   </BorderPane>
-               </top>
-            </BorderPane>
+               </children>
+            </AnchorPane>
          </top>
       </BorderPane>
    </children>
