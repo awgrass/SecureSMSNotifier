@@ -3,10 +3,10 @@
 */*/bin/*
 */bin/*
 bin/*
-*/*/*/out/*
-*/*/out/*
-*/out/*
-out/*
+*/*/*/out/production/*
+*/*/out/production/*
+*/out/production/*
+out/production/*
 */*/*/.idea/*
 */*/.idea/*
 */.idea/*
