@@ -1,4 +1,4 @@
-package com.securesms.acn.securesmsclient;
+package com.securesms.acn.securesmsserver;
 
 import javafx.application.Platform;
 
@@ -81,10 +81,12 @@ public class SecureSMSServer
                         if(newMessage && inputs.size() != 5)
                             continue;
                         if(newQRcode && inputs.size() == 1) {
+                            String ip = inputs.get(0);
                             //System.out.println("QR code received: " + inputs.get(0));
                             Platform.runLater(new Runnable() {
                                 public void run() {
-                                    controller.loadMessageFrame();
+                                    if(!controller.alreadyExists(ip, true))
+                                        controller.loadMessageFrame();
                                 }
                             });
                             continue;

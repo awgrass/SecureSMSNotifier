@@ -59,7 +59,8 @@
         android:layout_toRightOf="@id/listViewItemIconNotebook"
         android:layout_toStartOf="@+id/listViewItemIconEnable"
         android:gravity="center_vertical"
-        android:text="Example application"
+        android:singleLine="true"
+        android:text="Example application is a long text"
         android:textSize="16sp"
         android:textStyle="bold" />
 

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="621.0" prefWidth="763.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.securesms.acn.securesmsserver.Controller">
+   <children>
+       <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+           <center>
+               <ImageView fx:id="qrView" fitHeight="250.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                   <BorderPane.margin>
+                       <Insets />
+                   </BorderPane.margin>
+               </ImageView>
+           </center>
+           <top>
+               <Label prefHeight="19.0" prefWidth="325.0" text="Please scan the QR qode with the mobile app" BorderPane.alignment="CENTER">
+                   <font>
+                       <Font size="15.0" />
+                   </font>
+               </Label>
+           </top>
+           <padding>
+               <Insets bottom="50.0" top="50.0" />
+           </padding>
+       </BorderPane>
+   </children>
+</AnchorPane>

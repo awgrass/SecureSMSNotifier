@@ -578,7 +578,7 @@ public class MainActivity extends AppCompatActivity {
         public void run() {
             try {
                 Socket socket = new Socket(server.getIp(), server.getPort());
-                QRCodeFound(socket, qrcode);
+                QRCodeFound(socket, server.getIp());
             } catch (Exception e) {
                 e.printStackTrace();
             }
