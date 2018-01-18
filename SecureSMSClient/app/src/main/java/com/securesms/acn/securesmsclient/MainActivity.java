@@ -402,15 +402,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void addServer(Server server) {
+        if (serverList == null)
+            loadServerList();
+        boolean found = false;
+        for(Server s : serverList)
+            if(server.getIp().equals(s.getIp()))
+                found = true;
+        if(!found) {
+            serverList.add(server);
+            saveServerList(getApplicationContext());
+            if (listViewAdapter != null)
+                listViewAdapter.notifyDataSetChanged();
+        }
         if (fab != null)
             Snackbar.make(fab, getResources().getString(R.string.fab_add_msg), Snackbar.LENGTH_LONG)
                     .setAction("Add", null).show();
-        if (serverList == null)
-            loadServerList();
-        serverList.add(server);
-        saveServerList(getApplicationContext());
-        if (listViewAdapter != null)
-            listViewAdapter.notifyDataSetChanged();
     }
 
     private void loadServerList() {
@@ -457,7 +463,6 @@ public class MainActivity extends AppCompatActivity {
         linear.setOrientation(LinearLayout.VERTICAL);
         FrameLayout layout = new FrameLayout(activity);
         if (message != null && message.length() > 0) {
-            Log.i(TAG, "MESSAGE\n\nMESSAGE\n\nMESSAGE\n");
             FrameLayout frameView = new FrameLayout(activity);
             TextView messageView = new TextView(activity);
             messageView.setText(message);
