@@ -280,7 +280,6 @@ public class Controller {
     }
 
     public String alreadyExists(String ip, boolean add) {
-        String key = crypto.convertKeyToBase64();
         String found_key = null;
         List<String> ips = new ArrayList<>();
         List<String> keys = new ArrayList<>();
@@ -324,7 +323,7 @@ public class Controller {
             }
             prefs.putByteArray(PREF_IP_KEY, baos.toByteArray());
 
-            keys.add(key);
+            keys.add(crypto.convertKeyToBase64());
             ByteArrayOutputStream baos_keys = new ByteArrayOutputStream();
             DataOutputStream out_keys = new DataOutputStream(baos_keys);
             for (String element : keys) {
