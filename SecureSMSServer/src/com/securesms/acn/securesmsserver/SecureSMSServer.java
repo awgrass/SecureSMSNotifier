@@ -1,4 +1,4 @@
-package com.securesms.acn.securesmsclient;
+package com.securesms.acn.securesmsserver;
 
 import javafx.application.Platform;
 

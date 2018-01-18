@@ -1,4 +1,4 @@
-package com.securesms.acn.securesmsclient;
+package com.securesms.acn.securesmsserver;
 
 import ch.swingfx.twinkle.NotificationBuilder;
 import ch.swingfx.twinkle.event.NotificationEvent;
@@ -29,7 +29,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.prefs.Preferences;
 
