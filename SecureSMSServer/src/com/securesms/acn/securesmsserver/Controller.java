@@ -280,7 +280,7 @@ public class Controller {
     }
 
     public String alreadyExists(String ip, boolean add) {
-        String key = Crpyto.get();
+        String key = crypto.convertKeyToBase64();
         String found_key = null;
         List<String> ips = new ArrayList<>();
         List<String> keys = new ArrayList<>();
