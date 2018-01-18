@@ -181,7 +181,7 @@ public class Controller {
 
             @Override
             public ListCell<String> call(ListView<String> arg0) {
-                return new ListCell<>() {
+                return new ListCell<String>() {
 
                     @Override
                     protected void updateItem(String item, boolean bln) {
@@ -216,7 +216,7 @@ public class Controller {
 
             @Override
             public ListCell<SecureMessage> call(ListView<SecureMessage> arg0) {
-                return new ListCell<>() {
+                return new ListCell<SecureMessage>() {
                     {
                         prefWidthProperty().bind(messageListView.widthProperty().subtract(2));
                         setMaxWidth(Control.USE_PREF_SIZE);
