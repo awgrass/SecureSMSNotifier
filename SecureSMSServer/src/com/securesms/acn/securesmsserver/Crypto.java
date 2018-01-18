@@ -22,11 +22,16 @@ public class Crypto {
     private byte[] nonce;
     GCMParameterSpec spec;
 
-    public Crypto(){
+    public Crypto(SecretKey savedKey){
         try{
-            keyGen = KeyGenerator.getInstance("AES");
-            keyGen.init(AES_KEY_LENGTH * 8);
-            secretKey = keyGen.generateKey();
+            if (savedKey != null){
+                secretKey = savedKey;
+            }
+            else{
+                keyGen = KeyGenerator.getInstance("AES");
+                keyGen.init(AES_KEY_LENGTH * 8);
+                secretKey = keyGen.generateKey();
+            }
             gcmCipher = Cipher.getInstance("AES/GCM/NoPadding");
             nonce = new byte[GCM_NONCE_LENGTH];
         }
