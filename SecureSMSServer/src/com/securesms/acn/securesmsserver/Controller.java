@@ -35,6 +35,7 @@ import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 
+import javax.crypto.SecretKey;
 import java.awt.*;
 import java.io.*;
 import java.net.InetAddress;
@@ -280,8 +281,10 @@ public class Controller {
     }
 
     public String alreadyExists(String ip, boolean add) {
+        String key = Crpyto.get();
         String found_key = null;
         List<String> ips = new ArrayList<>();
+        List<String> keys = new ArrayList<>();
         Preferences prefs = Preferences.userNodeForPackage(Controller.class);
         // TODO: uncomment for clean server list
         // prefs.putByteArray(PREF_IP_KEY, new byte[0]);
@@ -294,10 +297,11 @@ public class Controller {
             try {
                 while (in.available() > 0) {
                     String input = in.readUTF();
-                    String key = in_keys.readUTF();
+                    String inputKey = in_keys.readUTF();
                     if(ip.equals(input))
-                        found_key = key;
+                        found_key = inputKey;
                     ips.add(input);
+                    keys.add(inputKey);
                 }
             }
             catch(EOFException e) {
@@ -320,6 +324,19 @@ public class Controller {
                 }
             }
             prefs.putByteArray(PREF_IP_KEY, baos.toByteArray());
+
+            keys.add(key);
+            ByteArrayOutputStream baos_keys = new ByteArrayOutputStream();
+            DataOutputStream out_keys = new DataOutputStream(baos_keys);
+            for (String element : keys) {
+                try {
+                    out_keys.writeUTF(element);
+                }
+                catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            prefs.putByteArray(PREF_KEY_KEY, baos_keys.toByteArray());
         }
         return found_key;
     }
