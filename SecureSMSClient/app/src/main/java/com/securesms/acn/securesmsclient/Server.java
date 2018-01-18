@@ -1,15 +1,28 @@
 package com.securesms.acn.securesmsclient;
 
-import java.net.InetAddress;
+import java.nio.ByteBuffer;
 
 public class Server {
+    private static int GCM_NONCE_LENGTH = 12;
+
     private String name;
     private String ip;
     private int port;
     private String time;
 
-    private String key;
+    private String keyBase64;
+    private long nonce_counter = 0;
     private boolean enabled;
+
+
+    //return nonce counter and increment by 5 for next message
+    public long getNonceCounter() {
+        long n = nonce_counter;
+        nonce_counter += 5;
+        return n;
+    }
+
+
 
     private ServerType type = ServerType.PC;
 
@@ -19,7 +32,7 @@ public class Server {
 
     public Server() {
         this.name = "";
-        this.key = "";
+        this.keyBase64 = "";
         this.ip = null;
         this.port = -1;
         this.time = "";
@@ -29,7 +42,7 @@ public class Server {
 
     public Server(String name, String key, String ip, int port, String time, ServerType type, boolean enabled){
         this.name = name;
-        this.key = key;
+        this.keyBase64 = key;
         this.ip = ip;
         this.port = port;
         this.time = time;
@@ -46,11 +59,11 @@ public class Server {
     }
 
     public String getKey() {
-        return key;
+        return keyBase64;
     }
 
     public void setKey(String key) {
-        this.key = key;
+        this.keyBase64 = key;
     }
 
     public String getIp() {

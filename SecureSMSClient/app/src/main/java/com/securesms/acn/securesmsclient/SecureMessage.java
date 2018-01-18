@@ -16,6 +16,12 @@ public class SecureMessage {
         this.sentTime = sentTime;
     }
 
+    public byte[] getBytes(){
+        int size = message.length() + sender.length() + number.length() + receivedTime.length() + sentTime.length() + 5;
+        String concatination = message + "\n" + sender + "\n" + number + "\n" + receivedTime + "\n" + sentTime;
+        return concatination.getBytes();
+    }
+
     public String getMessage() {
         return message;
     }

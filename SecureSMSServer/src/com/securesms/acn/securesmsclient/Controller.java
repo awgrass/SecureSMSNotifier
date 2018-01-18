@@ -60,22 +60,23 @@ public class Controller {
     private ListView messageListView;
     private Stage stage;
 
+
     private HashMap<String, ObservableList<String>> fromToMessagesMap = new HashMap<>();
 
 
 
 
-    void initStage(Stage stage){
+    void initStage(Stage stage, Crypto crypto){
         this.stage = stage;
         //Take a snapshot of the canvas and set it as an image in the ImageView control
-        String qrData = constructQrData();
+        String qrData = constructQrData(crypto.getKeyBase64(), crypto.getNonce());
         WritableImage snapshot = getQRCodeImage(qrData, 250, 250);
         qrView.setImage(snapshot);
 
 
         Preferences prefs = Preferences.userNodeForPackage(Controller.class);
-        if(prefs.getBoolean("QRCODE_FOUND", false))
-            loadMessageFrame();
+        //if(prefs.getBoolean("QRCODE_FOUND", false))
+         //   loadMessageFrame();
     }
 
     public void loadMessageFrame(){
@@ -191,7 +192,7 @@ public class Controller {
         return canvas.snapshot(null, null);
     }
 
-    private String constructQrData(){
+    private String constructQrData(String keyBase64, String nonceBase64){
         String ip = null;
         String computerName = null;
         try {
@@ -202,7 +203,7 @@ public class Controller {
             System.out.println("Error: " + e);
         }
 
-        String qrData = computerName + "|X4Eg5jKo0Xw4|" + ip + "|" + SecureSMSServer.socketServerPORT + "|1";
+        String qrData = computerName + "|" + keyBase64 + "|" + ip + "|" + SecureSMSServer.socketServerPORT + "|1";
         return qrData;
     }
 

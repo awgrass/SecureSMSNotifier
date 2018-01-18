@@ -22,6 +22,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.telephony.PhoneNumberUtils;
 import android.text.InputType;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.view.Menu;
@@ -35,6 +36,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
@@ -578,14 +580,14 @@ public class MainActivity extends AppCompatActivity {
         public void run() {
             try {
                 Socket socket = new Socket(server.getIp(), server.getPort());
-                QRCodeFound(socket, qrcode);
+                QRCodeFound(socket, server.getIp());
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
     }
 
-    public void QRCodeFound(final Socket socket, final String qrcode) {
+    public void QRCodeFound(final Socket socket, final String ip) {
         if (socket != null) {
             new Thread(new Runnable() {
                 @Override
@@ -593,7 +595,7 @@ public class MainActivity extends AppCompatActivity {
                     try {
                         DataOutputStream out = new DataOutputStream(socket.getOutputStream());
                         out.writeUTF("QR CODE BEGIN");
-                        out.writeUTF(qrcode);
+                        out.writeUTF(ip);
                         //out.writeUTF("QR CODE End");
                         out.close();
                         socket.close();

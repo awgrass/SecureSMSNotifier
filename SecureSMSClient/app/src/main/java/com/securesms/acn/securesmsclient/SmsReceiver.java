@@ -18,6 +18,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.telephony.SmsMessage;
+import android.util.Base64;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -120,19 +121,41 @@ public class SmsReceiver extends BroadcastReceiver {
         return contactName;
     }
 
-    public void sendToServer(final Socket socket, final SecureMessage output) {
+    public void sendToServer(final Socket socket, final SecureMessage output, final Server server) {
         if (socket != null) {
             new Thread(new Runnable() {
                 @Override
                 public void run() {
                     try {
+                        Crypto crypto = new Crypto(server.getKey(), server.getNonceCounter());
                         DataOutputStream out = new DataOutputStream(socket.getOutputStream());
                         out.writeUTF("SMS BEGIN");
-                        out.writeUTF(output.getSender());
-                        out.writeUTF(output.getNumber());
-                        out.writeUTF(output.getMessage());
-                        out.writeUTF(output.getReceivedTime());
-                        out.writeUTF(output.getSentTime());
+                        out.writeUTF(Crypto.encodeBase64(crypto.getNonce()));
+                        /*String[] outputs = new String[5];
+                        byte[][] encrypted = new byte[5][];
+
+                        encrypted[0] = crypto.encrypt(output.getSender().getBytes());
+                        encrypted[1] = crypto.encrypt(output.getNumber().getBytes());
+                        encrypted[2] = crypto.encrypt(output.getMessage().getBytes());
+                        encrypted[3] = crypto.encrypt(output.getReceivedTime().getBytes());
+                        encrypted[4] = crypto.encrypt(output.getSentTime().getBytes());
+
+                        outputs[0] = crypto.encodeBase64(encrypted[0]);
+                        outputs[1] = crypto.encodeBase64(encrypted[1]);
+                        outputs[2] = crypto.encodeBase64(encrypted[2]);
+                        outputs[3] = crypto.encodeBase64(encrypted[3]);
+                        outputs[4] = crypto.encodeBase64(encrypted[4]);
+
+                        out.writeUTF(outputs[0]);
+                        out.writeUTF(outputs[1]);
+                        out.writeUTF(outputs[2]);
+                        out.writeUTF(outputs[3]);
+                        out.writeUTF(outputs[4]);*/
+                        out.writeUTF(crypto.encryptAndEncode(output.getSender()));
+                        out.writeUTF(crypto.encryptAndEncode(output.getNumber()));
+                        out.writeUTF(crypto.encryptAndEncode(output.getMessage()));
+                        out.writeUTF(crypto.encryptAndEncode(output.getReceivedTime()));
+                        out.writeUTF(crypto.encryptAndEncode(output.getSentTime()));
                         //out.writeUTF("SMS END");
                         out.close();
                         socket.close();
@@ -158,7 +181,7 @@ public class SmsReceiver extends BroadcastReceiver {
                     continue;
                 try {
                     Socket socket = new Socket(server.getIp(), server.getPort());
-                    sendToServer(socket, output);
+                    sendToServer(socket, output, server);
 
                 } catch (Exception e) {
                     e.printStackTrace();
