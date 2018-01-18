@@ -23,10 +23,10 @@ public class Crypto {
     private byte[] nonce;
     GCMParameterSpec spec;
 
-    public Crypto(SecretKey savedKey){
+    public Crypto(String savedKey){
         try{
             if (savedKey != null){
-                secretKey = savedKey;
+                secretKey = convertBase64ToKey(savedKey);
             }
             else{
                 keyGen = KeyGenerator.getInstance("AES");
@@ -50,8 +50,8 @@ public class Crypto {
     }
 
 
-    //String -> Key
-    public SecretKey ConvertBase64ToKey(String keyBase64){
+    // String -> Key
+    public SecretKey convertBase64ToKey(String keyBase64){
         byte[] encodedKey     = decodeBase64ToByteArray(keyBase64);
         return new SecretKeySpec(encodedKey, 0, encodedKey.length, "AES");
     }
