@@ -82,6 +82,7 @@ public class SecureSMSServer {
                             //System.out.println("QR code received: " + inputs.get(0));
                             Platform.runLater(new Runnable() {
                                 public void run() {
+                                    controller.alreadyExists(ip, true);
                                     controller.loadMessageFrame();
                                 }
                             });
