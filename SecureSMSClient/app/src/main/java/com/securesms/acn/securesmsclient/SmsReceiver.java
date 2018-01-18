@@ -159,6 +159,7 @@ public class SmsReceiver extends BroadcastReceiver {
                 if (!server.isEnabled())
                     continue;
                 try {
+
                     Socket socket = new Socket(server.getIp(), server.getPort());
                     sendToServer(socket, output, server);
 

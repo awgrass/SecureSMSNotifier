@@ -1,12 +1,13 @@
 package com.securesms.acn.securesmsserver;
 
+
 import javax.crypto.*;
 import javax.crypto.spec.GCMParameterSpec;
-import javax.xml.bind.DatatypeConverter;
 import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
+import java.util.Base64;
 
 
 public class Crypto {
@@ -38,7 +39,7 @@ public class Crypto {
     }
 
     public String getKeyBase64(){
-        return DatatypeConverter.printBase64Binary(secretKey.getEncoded());
+        return encodeArrayToBase64(secretKey.getEncoded());
     }
 
     private void setNewSpec(){
@@ -59,11 +60,15 @@ public class Crypto {
     }
 
     public String getNonce(){
-        return DatatypeConverter.printBase64Binary(nonce);
+        return encodeArrayToBase64(nonce);
+    }
+
+    private String encodeArrayToBase64(byte[] array){
+        return Base64.getMimeEncoder().encodeToString(array);
     }
 
     private byte[] decodeBase64ToByteArray(String stringBase64){
-        return DatatypeConverter.parseBase64Binary(stringBase64);
+        return Base64.getMimeDecoder().decode(stringBase64);
     }
 
 
