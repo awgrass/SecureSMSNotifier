@@ -3,6 +3,7 @@ package com.securesms.acn.securesmsserver;
 
 import javax.crypto.*;
 import javax.crypto.spec.GCMParameterSpec;
+import javax.crypto.spec.SecretKeySpec;
 import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
 import java.security.InvalidAlgorithmParameterException;
@@ -43,8 +44,16 @@ public class Crypto {
         setNewSpec();
     }
 
-    public String getKeyBase64(){
+    // Key -> String
+    public String convertKeyToBase64(){
         return encodeArrayToBase64(secretKey.getEncoded());
+    }
+
+
+    //String -> Key
+    public SecretKey ConvertBase64ToKey(String keyBase64){
+        byte[] encodedKey     = decodeBase64ToByteArray(keyBase64);
+        return new SecretKeySpec(encodedKey, 0, encodedKey.length, "AES");
     }
 
     private void setNewSpec(){
