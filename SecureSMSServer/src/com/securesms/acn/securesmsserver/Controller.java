@@ -272,7 +272,8 @@ public class Controller {
 
         AnchorPane ap = (AnchorPane) contentPane.getChildren().get(0);
         BorderPane bp = (BorderPane) ap.getChildren().get(0);
-        qrView = (ImageView) bp.getCenter();
+        BorderPane bp2 = (BorderPane) bp.getCenter();
+        qrView = (ImageView) bp2.getCenter();
 
         String qrData = constructQrData();
         WritableImage snapshot = getQRCodeImage(qrData, 250, 250);
@@ -285,8 +286,8 @@ public class Controller {
         List<String> keys = new ArrayList<>();
         Preferences prefs = Preferences.userNodeForPackage(Controller.class);
         // TODO: uncomment for clean server list
-        // prefs.putByteArray(PREF_IP_KEY, new byte[0]);
-        // prefs.putByteArray(PREF_KEY_KEY, new byte[0]);
+        //prefs.putByteArray(PREF_IP_KEY, new byte[0]);
+        //prefs.putByteArray(PREF_KEY_KEY, new byte[0]);
         byte[] bytes = prefs.getByteArray(PREF_IP_KEY, null);
         byte[] bytes_keys = prefs.getByteArray(PREF_KEY_KEY, null);
         if(bytes != null) {

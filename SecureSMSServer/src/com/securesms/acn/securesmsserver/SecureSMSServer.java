@@ -98,7 +98,6 @@ public class SecureSMSServer {
                         for (int i = 1; i < inputs.size(); ++i){
                             finalInputs.add(crypto.decodeAndDecrypt(inputs.get(i).trim()));
                         }
-
                         SecureMessage message = new SecureMessage(finalInputs.get(2), finalInputs.get(0), finalInputs.get(1), finalInputs.get(3), finalInputs.get(4));
 
                         Platform.runLater(new Runnable() {
