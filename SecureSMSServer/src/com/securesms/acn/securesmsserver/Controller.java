@@ -430,7 +430,8 @@ public class Controller {
             System.out.println("Error: " + e);
         }
 
-        String qrData = computerName + "|" + crypto.convertKeyToBase64() + "|" + ip + "|" + SecureSMSServer.socketServerPORT + "|1";
+        String type = OSCheck.isOSType(OSCheck.OSType.MacOS) ? "1" : "0";
+        String qrData = computerName + "|" + crypto.convertKeyToBase64() + "|" + ip + "|" + SecureSMSServer.socketServerPORT + "|" + type;
         return qrData;
     }
 
