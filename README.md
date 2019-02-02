@@ -1,4 +1,4 @@
-# README #
+# SecureSMSNotifier #
 
 ## ACN Task 2: _SecureSMSNotifier_ ##
 
@@ -31,7 +31,7 @@ The recommendet IDE is Android Studio version 3.0.1.
 
 * On opening the server app, it jumps to the QR code window.
 * Once the QR code is scanned with the mobile app, the server automatically switches to message view.
-* The phone connects to the desktop on SMS receive and sends the received SMS using a AES GCM encryption with nonces.
+* The phone connects to the desktop on SMS receive and sends the received SMS using an AEAD scheme (AES-GCM).
 
 
 ### Good to know ###
